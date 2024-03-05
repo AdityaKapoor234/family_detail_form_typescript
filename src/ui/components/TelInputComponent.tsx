@@ -1,4 +1,4 @@
-function TelInputComponent({ labelName }: { labelName: String }) {
+function TelInputComponent({ labelName }: { labelName: string }) {
 	return (
 		<div className="mb-3">
 			<label htmlFor="exampleInputEmail1" className="form-label">
