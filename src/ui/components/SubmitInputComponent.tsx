@@ -1,6 +1,6 @@
-function SubmitInputComponent({ displayText }: { displayText: String }) {
+function SubmitInputComponent({ displayText }: { displayText: string }) {
 	return (
-		<button className="btn btn-primary" type="submit">
+		<button className="btn btn-primary mt-3" type="submit">
 			{displayText}
 		</button>
 	);
