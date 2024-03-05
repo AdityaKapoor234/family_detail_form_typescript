@@ -3,13 +3,22 @@ type Options = {
 	optionValue: string | number;
 };
 
-function SelectComponent({ options }: { options: Options[] }) {
+function SelectComponent({
+	options,
+	labelName,
+}: {
+	options: Options[];
+	labelName: string;
+}) {
 	return (
-		<select className="form-select">
-			{options.map((item) => {
-				return <option value={item.optionValue}>{item.optionName}</option>;
-			})}
-		</select>
+		<>
+			<label className="form-label">{labelName}</label>
+			<select className="form-select">
+				{options.map((item) => {
+					return <option value={item.optionValue}>{item.optionName}</option>;
+				})}
+			</select>
+		</>
 	);
 }
 
