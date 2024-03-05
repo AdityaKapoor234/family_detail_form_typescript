@@ -1,7 +1,7 @@
 import EmailInputComponent from '../components/EmailInputComponent';
-import TextInputComponent from '../components/TextInputComponent';
-import TelInputComponent from '../components/TelInputComponent';
 import SubmitInputComponent from '../components/SubmitInputComponent';
+import TelInputComponent from '../components/TelInputComponent';
+import TextInputComponent from '../components/TextInputComponent';
 
 function UserDataFormLayout() {
 	return (
