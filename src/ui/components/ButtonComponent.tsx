@@ -1,12 +1,14 @@
+export type PropTypes = {
+	displayText: string;
+	args: unknown;
+	onClickHandler: (args?: unknown) => void;
+};
+
 function ButtonComponent({
 	displayText,
 	args = null,
 	onClickHandler,
-}: {
-	displayText: string;
-	args: unknown;
-	onClickHandler: (args?: unknown) => void;
-}) {
+}: PropTypes) {
 	return (
 		<button
 			className="btn btn-primary mt-3"
