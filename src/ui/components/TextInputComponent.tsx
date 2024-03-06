@@ -1,4 +1,4 @@
-import { Path, FieldValues, UseFormRegister } from 'react-hook-form';
+import { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 import { ValidationConstrainType } from '../../types/ValidationConstrainTypes';
 
 export type PropTypes<T extends FieldValues> = {
