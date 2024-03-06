@@ -17,7 +17,7 @@ function TelInputComponent<T extends FieldValues>({
 	validationConstrain,
 }: PropTypes<T>) {
 	return (
-		<div className="mb-3">
+		<div className="m-5">
 			<label className="form-label">{displayText}</label>
 			<input
 				type="tel"
