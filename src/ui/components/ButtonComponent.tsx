@@ -10,18 +10,20 @@ function ButtonComponent({
 	onClickHandler,
 }: PropTypes) {
 	return (
-		<button
-			className="btn btn-primary mt-3"
-			onClick={() => {
-				if (!args) {
-					onClickHandler();
-				} else {
-					onClickHandler(args);
-				}
-			}}
-		>
-			{displayText}
-		</button>
+		<div className="m-5">
+			<button
+				className="btn btn-primary m-5"
+				onClick={() => {
+					if (!args) {
+						onClickHandler();
+					} else {
+						onClickHandler(args);
+					}
+				}}
+			>
+				{displayText}
+			</button>
+		</div>
 	);
 }
 
