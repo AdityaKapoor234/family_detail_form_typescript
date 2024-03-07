@@ -203,7 +203,7 @@ function RelativesDataFormLayout() {
 
 	const submitForm = () => {
 		const validRelatives = relatives.filter((item) => !item.isValid);
-		const userDataPresent = localStorage.getItem('userDetail');
+		const userDataPresent = localStorage.getItem('userDetails');
 
 		if (!userDataPresent) {
 			alert(
