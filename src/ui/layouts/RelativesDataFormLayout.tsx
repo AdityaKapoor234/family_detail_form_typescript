@@ -147,7 +147,7 @@ function InformationLayout({
 // ##################
 // # MAIN COMPONENT #
 // ##################
-function ParentDataFormLayout() {
+function RelativesDataFormLayout() {
 	const [relatives, setRelatives] = useState([
 		{
 			id: uuidv4(),
@@ -279,4 +279,4 @@ function ParentDataFormLayout() {
 	);
 }
 
-export default ParentDataFormLayout;
+export default RelativesDataFormLayout;
