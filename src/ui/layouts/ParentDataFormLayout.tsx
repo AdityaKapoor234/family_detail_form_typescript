@@ -75,6 +75,13 @@ function RelativeForm({ relative, editStateFunc }: RelativeFormPropTypes) {
 					onChangeHandler={editStateFunc}
 				/>
 
+				{relative.isValid ? (
+					<p>
+						<i className="bi bi-check-circle"></i>
+						Can be saved
+					</p>
+				) : null}
+
 				<SubmitInputComponent displayText="Save Details" />
 			</div>
 		</form>
