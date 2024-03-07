@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { v4 as uuidv4 } from 'uuid';
 import ButtonComponent from '../components/ButtonComponent';
@@ -31,6 +31,10 @@ type RelativeFormPropTypes = {
 	relative: RelativeType;
 	editStateFunc: (arg0: RelativeType) => void;
 };
+
+// #################
+// # HELPER LAYOUT #
+// #################
 
 function RelativeForm({ relative, editStateFunc }: RelativeFormPropTypes) {
 	const {
@@ -88,7 +92,53 @@ function RelativeForm({ relative, editStateFunc }: RelativeFormPropTypes) {
 	);
 }
 
-// MAIN COMPONENT
+// #################
+// # HELPER LAYOUT #
+// #################
+
+function InformationLayout({
+	relativeDetails,
+}: {
+	relativeDetails: RelativeType[];
+}) {
+	const [userDetails, setUserDetails] = useState<{
+		firstName: string;
+		lastName: string;
+		email: string;
+		contactDetails: number;
+	}>();
+
+	useEffect(() => {
+		const savedUserDetails = localStorage.getItem('userDetails');
+		if (savedUserDetails) setUserDetails(JSON.parse(savedUserDetails));
+	}, []);
+
+	return (
+		<div className="m-5">
+			<h1>User Details</h1>
+			<p>{`Fisrt Name ${userDetails?.firstName}`}</p>
+			<p>{`Last Name ${userDetails?.lastName}`}</p>
+			<p>{`email ${userDetails?.email}`}</p>
+			<p>{`contactDetails ${userDetails?.contactDetails}`}</p>
+
+			<h1>Relative Details</h1>
+			{relativeDetails.map((item, index) => {
+				return (
+					<>
+						<h2>{`Relative ${index + 1}`}</h2>
+						<p>{`First Name: ${item.firstName}`}</p>
+						<p>{`Last Name:${item.lastName}`}</p>
+						<p>{`Relation: ${item.relation}`}</p>
+					</>
+				);
+			})}
+		</div>
+	);
+}
+
+// ##################
+// # MAIN COMPONENT #
+// ##################
 function ParentDataFormLayout() {
 	const [relatives, setRelatives] = useState([
 		{
@@ -171,11 +221,14 @@ function ParentDataFormLayout() {
 					);
 				})}
 			</div>
+
 			<ButtonComponent
 				onClickHandler={addRelatives}
 				args={null}
 				displayText="Add Relative"
 			/>
+
+			<ButtonComponent onClickHandler={submitForm} displayText="Submit" />
 		</div>
 	);
 }
