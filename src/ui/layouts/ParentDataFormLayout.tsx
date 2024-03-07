@@ -189,6 +189,25 @@ function ParentDataFormLayout() {
 		if (updatedRelatives.length > 0) setRelatives(updatedRelatives);
 	};
 
+	const submitForm = () => {
+		const validRelatives = relatives.filter((item) => !item.isValid);
+		const userDataPresent = localStorage.getItem('userDetail');
+
+		if (!userDataPresent) {
+			alert(
+				'Please go to users page and save user details before saving relative details'
+			);
+			return;
+		}
+
+		if (!validRelatives.length) {
+			localStorage.setItem('relativesData', JSON.stringify(relatives));
+			setModalShown(true);
+			return;
+		}
+		alert('Please check all fields for error');
+	};
+
 	return (
 		<div className="m-5">
 			<h1>Relatives Form</h1>
