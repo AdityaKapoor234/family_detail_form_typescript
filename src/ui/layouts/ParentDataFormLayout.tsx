@@ -41,8 +41,15 @@ function RelativeForm({ relative, editStateFunc }: RelativeFormPropTypes) {
 	const {
 		register,
 		handleSubmit,
+		setValue,
 		formState: { errors },
 	} = useForm<Inputs>();
+
+	useEffect(() => {
+		setValue('firstName', relative.firstName);
+		setValue('lastName', relative.lastName);
+		setValue('relation', relative.relation);
+	}, [relative]);
 
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		console.log(data);
@@ -152,6 +159,11 @@ function ParentDataFormLayout() {
 	]);
 	const [modalShown, setModalShown] = useState(false);
 
+	useEffect(() => {
+		const relativeDetails = localStorage.getItem('relativesDetails');
+		if (relativeDetails) setRelatives(JSON.parse(relativeDetails));
+	}, []);
+
 	const closeModal = () => {
 		setModalShown(false);
 	};
@@ -201,7 +213,7 @@ function ParentDataFormLayout() {
 		}
 
 		if (!validRelatives.length) {
-			localStorage.setItem('relativesData', JSON.stringify(relatives));
+			localStorage.setItem('relativeDetails', JSON.stringify(relatives));
 			setModalShown(true);
 			return;
 		}
