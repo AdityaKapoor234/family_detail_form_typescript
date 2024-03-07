@@ -31,7 +31,6 @@ function UserDataFormLayout() {
 			setValue('lastName', fieldValues.lastName);
 			setValue('email', fieldValues.email);
 			setValue('contactDetails', fieldValues.contactDetails);
-			// setValue('firstName', fieldValues.firstName);
 		}
 	}, [setValue]);
 
@@ -41,53 +40,51 @@ function UserDataFormLayout() {
 	};
 
 	return (
-		<>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<div className="m-5">
-					<h1>Personel Details</h1>
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<div className="m-5">
+				<h1>Personel Details</h1>
 
-					<TextInputComponent
-						displayText="First Name"
-						inputName="firstName"
-						register={register}
-						validationConstrain={{ required: 'This field is required' }}
-						errorMessage={errors.firstName?.message?.toString()}
-					/>
+				<TextInputComponent
+					displayText="First Name"
+					inputName="firstName"
+					register={register}
+					validationConstrain={{ required: 'This field is required' }}
+					errorMessage={errors.firstName?.message?.toString()}
+				/>
 
-					<TextInputComponent
-						displayText="Last Name"
-						inputName="lastName"
-						register={register}
-						validationConstrain={{ required: 'This field is required' }}
-						errorMessage={errors.lastName?.message?.toString()}
-					/>
+				<TextInputComponent
+					displayText="Last Name"
+					inputName="lastName"
+					register={register}
+					validationConstrain={{ required: 'This field is required' }}
+					errorMessage={errors.lastName?.message?.toString()}
+				/>
 
-					<EmailInputComponent
-						displayText="email"
-						inputName="email"
-						register={register}
-						validationConstrain={{ required: 'This field is required' }}
-						errorMessage={errors.email?.message?.toString()}
-					/>
+				<EmailInputComponent
+					displayText="email"
+					inputName="email"
+					register={register}
+					validationConstrain={{ required: 'This field is required' }}
+					errorMessage={errors.email?.message?.toString()}
+				/>
 
-					<TelInputComponent
-						displayText="Mobile Number"
-						inputName="contactDetails"
-						register={register}
-						validationConstrain={{
-							required: 'This field is required',
-							minLength: {
-								value: 10,
-								message: 'Please enter a 10 digit mobile number',
-							},
-						}}
-						errorMessage={errors.contactDetails?.message?.toString()}
-					/>
+				<TelInputComponent
+					displayText="Mobile Number"
+					inputName="contactDetails"
+					register={register}
+					validationConstrain={{
+						required: 'This field is required',
+						minLength: {
+							value: 10,
+							message: 'Please enter a 10 digit mobile number',
+						},
+					}}
+					errorMessage={errors.contactDetails?.message?.toString()}
+				/>
 
-					<SubmitInputComponent displayText="Next" />
-				</div>
-			</form>
-		</>
+				<SubmitInputComponent displayText="Next" />
+			</div>
+		</form>
 	);
 }
 
