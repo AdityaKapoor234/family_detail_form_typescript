@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import EmailInputComponent from '../components/EmailInputComponent';
 import SubmitInputComponent from '../components/SubmitInputComponent';
 import TelInputComponent from '../components/TelInputComponent';
@@ -20,6 +21,8 @@ function UserDataFormLayout() {
 		setValue,
 	} = useForm<Inputs>();
 
+	const navigate = useNavigate();
+
 	useEffect(() => {
 		const storedValues = localStorage.getItem('userDetails');
 		if (storedValues) {
@@ -34,7 +37,7 @@ function UserDataFormLayout() {
 
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
 		localStorage.setItem('userDetails', JSON.stringify(data));
-		alert('We can move to next stage');
+		navigate('relatives');
 	};
 
 	return (
