@@ -51,51 +51,47 @@ function RelativeForm({ relative, editStateFunc }: RelativeFormPropTypes) {
 		setValue('relation', relative.relation);
 	}, [relative]);
 
-	const onSubmit: SubmitHandler<Inputs> = (data) => {
-		console.log(data);
-	};
+	const onSubmit: SubmitHandler<Inputs> = (data) => {};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<div className="m-5">
-				<TextInputComponent
-					displayText="First Name"
-					inputName="firstName"
-					register={register}
-					validationConstrain={{ required: 'This field is required' }}
-					errorMessage={errors.firstName?.message?.toString()}
-					onChangeHandler={editStateFunc}
-					stateValue={relative}
-				/>
+			<TextInputComponent
+				displayText="First Name"
+				inputName="firstName"
+				register={register}
+				validationConstrain={{ required: 'This field is required' }}
+				errorMessage={errors.firstName?.message?.toString()}
+				onChangeHandler={editStateFunc}
+				stateValue={relative}
+			/>
 
-				<TextInputComponent
-					displayText="Last Name"
-					inputName="lastName"
-					register={register}
-					validationConstrain={{ required: 'This field is required' }}
-					errorMessage={errors.lastName?.message?.toString()}
-					onChangeHandler={editStateFunc}
-					stateValue={relative}
-				/>
+			<TextInputComponent
+				displayText="Last Name"
+				inputName="lastName"
+				register={register}
+				validationConstrain={{ required: 'This field is required' }}
+				errorMessage={errors.lastName?.message?.toString()}
+				onChangeHandler={editStateFunc}
+				stateValue={relative}
+			/>
 
-				<SelectComponent
-					displayText="Relation"
-					inputName="relation"
-					register={register}
-					options={options}
-					stateValue={relative}
-					onChangeHandler={editStateFunc}
-				/>
+			<SelectComponent
+				displayText="Relation"
+				inputName="relation"
+				register={register}
+				options={options}
+				stateValue={relative}
+				onChangeHandler={editStateFunc}
+			/>
 
-				{relative.isValid ? (
-					<p>
-						<i className="bi bi-check-circle"></i>
-						Can be saved
-					</p>
-				) : null}
+			{relative.isValid ? (
+				<p>
+					<i className="bi bi-check-circle"></i>
+					Can be saved
+				</p>
+			) : null}
 
-				<SubmitInputComponent displayText="Can I save this" />
-			</div>
+			<SubmitInputComponent displayText="Can I save this" />
 		</form>
 	);
 }
@@ -213,7 +209,7 @@ function RelativesDataFormLayout() {
 		}
 
 		if (!validRelatives.length) {
-			localStorage.setItem('relativeDetails', JSON.stringify(relatives));
+			localStorage.setItem('relativesDetails', JSON.stringify(relatives));
 			setModalShown(true);
 			return;
 		}
