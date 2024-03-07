@@ -5,6 +5,7 @@ import ButtonComponent from '../components/ButtonComponent';
 import SelectComponent from '../components/SelectComponent';
 import SubmitInputComponent from '../components/SubmitInputComponent';
 import TextInputComponent from '../components/TextInputComponent';
+import GenericModalLayout from './GenericModalLayout';
 
 const options = [
 	{ optionName: 'Father', optionValue: 'Father' },
@@ -149,6 +150,11 @@ function ParentDataFormLayout() {
 			isValid: false,
 		},
 	]);
+	const [modalShown, setModalShown] = useState(false);
+
+	const closeModal = () => {
+		setModalShown(false);
+	};
 
 	const addRelatives = () => {
 		setRelatives((relatives) => [
@@ -229,6 +235,15 @@ function ParentDataFormLayout() {
 			/>
 
 			<ButtonComponent onClickHandler={submitForm} displayText="Submit" />
+
+			<GenericModalLayout
+				titleText="User and Relative Details"
+				isOpen={modalShown}
+				buttonText={'Close'}
+				closeModal={closeModal}
+			>
+				<InformationLayout relativeDetails={relatives} />
+			</GenericModalLayout>
 		</div>
 	);
 }
