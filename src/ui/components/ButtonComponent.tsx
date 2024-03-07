@@ -1,14 +1,14 @@
-export type PropTypes = {
+export type PropTypes<T> = {
 	displayText: string;
-	args: unknown;
-	onClickHandler: (args?: unknown) => void;
+	args?: T;
+	onClickHandler: { (args?: T): void } | { (): void };
 };
 
-function ButtonComponent({
+function ButtonComponent<T>({
 	displayText,
-	args = null,
+	args = undefined,
 	onClickHandler,
-}: PropTypes) {
+}: PropTypes<T>) {
 	return (
 		<div className="m-5">
 			<button
