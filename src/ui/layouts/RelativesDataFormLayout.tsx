@@ -147,7 +147,7 @@ function InformationLayout({
 // ##################
 // # MAIN COMPONENT #
 // ##################
-function ParentDataFormLayout() {
+function RelativesDataFormLayout() {
 	const [relatives, setRelatives] = useState([
 		{
 			id: uuidv4(),
@@ -203,7 +203,7 @@ function ParentDataFormLayout() {
 
 	const submitForm = () => {
 		const validRelatives = relatives.filter((item) => !item.isValid);
-		const userDataPresent = localStorage.getItem('userDetail');
+		const userDataPresent = localStorage.getItem('userDetails');
 
 		if (!userDataPresent) {
 			alert(
@@ -279,4 +279,4 @@ function ParentDataFormLayout() {
 	);
 }
 
-export default ParentDataFormLayout;
+export default RelativesDataFormLayout;
