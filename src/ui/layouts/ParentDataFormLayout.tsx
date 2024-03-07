@@ -87,7 +87,7 @@ function RelativeForm({ relative, editStateFunc }: RelativeFormPropTypes) {
 					</p>
 				) : null}
 
-				<SubmitInputComponent displayText="Save Details" />
+				<SubmitInputComponent displayText="Can I save this" />
 			</div>
 		</form>
 	);
