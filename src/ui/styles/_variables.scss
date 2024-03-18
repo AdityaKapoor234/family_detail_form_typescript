@@ -1,0 +1,62 @@
+/*   color variables */
+$clr-gray100: #dfe9f0;
+$clr-gray200: #dbeaf6;
+$clr-gray300: #e1e5ee;
+$clr-gray500: #646d80;
+$clr-background: #fafafa;
+$clr-background-100: #f5f5f5;
+$clr-label-name: #7e8f99;
+$clr-dark-blue: #012169;
+$clr-dark-orange: #f54a00;
+$clr-light-orange: #f76e33;
+$clr-sky-blue: #ecf1f5;
+$clr-light-blue: #a1c5e1;
+$clr-dashboard: #eaeaea;
+$clr-table-content: #404040;
+$clr-check: #60ff8c;
+$clr-blue: #08546c;
+$clr-white: #ffffff;
+$clr-black: #000000;
+$clr-blue: #323abb;
+$clr-body-text: #2e4450;
+$clr-background-blue: #edf4fd;
+$clr-text-blue: #404bff;
+$clr-border: #cdcdcd;
+$clr-text: #7e7e7e;
+$clr-text-gray: #6f6b68;
+$clr-dark-gray: #302b27;
+$clr-gray: #656565;
+$clr-green: #001f29;
+$clr-green-100: #004e66;
+$clr-input-color: #cccccc;
+$clr-light-red: #fef7eb;
+$clr-text-yellow: #eea000;
+$clr-text-red: #c21313;
+$clr-text-green: #14a066;
+$clr-light-green: #00e787;
+$clr-green-border: #004e66;
+
+/*   border radius */
+$radius: 0.2rem;
+
+//for large heading font size
+$font-heading-xxl: 48px; // (min-width: 1199.5px)
+$font-heading-xl: 42px; // (min-width: 1199.5px)
+$font-heading-lg: 38px; // (max-width: 1199.5px) and (min-width: 991.5px)
+$font-heading-md: 36px; // (max-width: 991.5px) and (min-width: 767.5px)
+$font-heading-sm: 34px; // (max-width: 767.5px) and (min-width: 575.5px)
+$font-heading-xs: 32px; // (max-width: 575.5px) and (min-width: 200.5px)
+
+//font for semi large heading
+$font-semiheading-xl: 30px;
+$font-semiheading-lg: 28px;
+$font-semiheading-lg-sm: 26px;
+$font-semiheading-md: 24px;
+$font-semiheading-sm: 22px;
+$font-semiheading-xs: 20px;
+
+//font for content
+$font-content-xl: 18px;
+$font-content-lg: 16px;
+$font-content-md: 14px;
+$font-content-xs: 12px;
