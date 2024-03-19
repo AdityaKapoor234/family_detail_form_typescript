@@ -1,7 +1,6 @@
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -101,13 +100,6 @@ export default function FamilyForm(props: Data) {
                     <MenuItem value={"Wife"}>Wife</MenuItem>
                   </Select>
                 </FormControl>
-                {/* <input
-                  style={{ paddingLeft: "0.9rem" }}
-                  type="text"
-                  value={familyDetails?.relation}
-                  onChange={(event) => setFamilyDetails({ ...familyDetails, relation: event.target.value })}
-                  className="input-tag"
-                /> */}
               </div>
               <small className="text-danger">{props?.validateError?.relation}</small>
             </div>
